@@ -2,8 +2,8 @@
 
 namespace App\Core;
 
-use CodeIgniter\HTTP\RequestInterface;
 use CodeIgniter\Model;
+
 
 class BaseModel extends Model
 {
@@ -15,7 +15,6 @@ class BaseModel extends Model
     function __construct(&$model_config = null)
     {
         parent::__construct();
-        // $this->db = db_connect();
         $this->Db = \Config\Database::connect();
         $this->model = $model_config;
         $this->primary = $this->model['table']['primary'];
@@ -25,7 +24,11 @@ class BaseModel extends Model
 
     public function store($id = null, $dataIns = null, $returnLog = true)
     {
-        $query =  $this->db->insert($this->table, $dataIns);
+        if ($id != null) {
+            $dataIns[$this->primary] = $id;
+        }
+
+        $query =  $this->db->insert($dataIns);
         if ($returnLog) {
             $res = [
                 'success' => $query ? true : false,
@@ -51,8 +54,8 @@ class BaseModel extends Model
         }
 
         $query = $this->db->select()
-        ->where($where)
-        ->get()->getRowArray();
+            ->where($where)
+            ->get()->getRowArray();
 
         return $query;
     }
@@ -101,8 +104,20 @@ class BaseModel extends Model
         } else {
             $where = [$this->primary => $id];
         }
-        $query = $this->db->delete($where);
+        $findFirst = $this->read($id);
+        if ($findFirst) {
+            $query = $this->db->delete($where);
 
-        return $query;
+            $res = [
+                'success' => $query ? true : false,
+                'message' => $query ? 'Successfully Deleted Data' : 'Failed to Delete Data, Please Contact your System Administrator',
+            ];
+        } else {
+            $res = [
+                'success' => false,
+                'message' => 'Unable to Delete Data, Data Not Found',
+            ];
+        }
+        return $res;
     }
 }
