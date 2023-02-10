@@ -17,6 +17,7 @@ class Users extends \App\Core\BaseModel
                     array('name' => 'user_role_id'),
                     array('name' => 'user_password'),
                     array('name' => 'user_status'),
+                    array('name' => 'user_email'),
                 )
             ),
         );
