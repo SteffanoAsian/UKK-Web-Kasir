@@ -11,35 +11,25 @@ class Main extends \CodeIgniter\Controller
         if (!session()->get('user_id')) {
             return redirect()->route('app-login');
         } else {
-            // return redirect()->route('main');
             echo view('../../modules/main/Views/main.php');
         }
     }
 
     public function getPage()
-	{
-		$data 					= $this->request->getPost();
-        print_r($data);exit;
-		// $operation 				= (new Menu())->find($data['con']);
-		// $module 			    = explode('-', $operation['menu_code']);
-		// $fileView 				= (count($module) == 1) ? 'index' : $module[1];
-		// $viewPath		        = 'BackEnd\\' . ($module[0]) . '\\Views\\' . $fileView;
-		// $operation['view'] 	    = base64_encode(view($viewPath));
-		// $operation['isLogin']   = (session()->UserId != '') ? true : false;
-
-		// return $this->respond($operation, 200);
-	}
-
-    public function login()
     {
-        $query = (new UsersModel())->select(['user_name' => 'test User']);
-        echo "<pre>";
-        print_r($query);
-        exit;
+        $data                     = $this->request->getPost();
+        $module = $this->getRules($data['menu']);
+        $fileView 				= (count($module) == 1) ? 'index' : $module[1];
+        $viewPath		        = 'Modules\\' . ($module[0]) . '\\Views\\' . $fileView;
+        $operation['view'] 	    = base64_encode(view($viewPath));
+        $operation['isLogin']   = (session()->get('user_id') != '') ? true : false;
+
+        return json_encode($operation);
     }
 
-    public function test2()
+    protected function getRules($menu)
     {
-        echo "Hello lagi";
+        $search = explode('-', $menu);
+        return $search;
     }
 }

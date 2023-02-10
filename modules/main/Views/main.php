@@ -2,6 +2,7 @@
 
 <html lang="en">
 <!--begin::Head-->
+
 <head>
 	<base href="">
 	<meta charset="utf-8" />
@@ -18,31 +19,38 @@
 	<link href="<?php $baseURL ?>/assets/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css" />
 	<link href="<?php $baseURL ?>/assets/css/style.bundle.css" rel="stylesheet" type="text/css" />
 
+	<!-- begin::CustomCSS -->
+	<!-- LDS Loading CSS -->
+	<link href="<?php $baseURL ?>/assets/css/custom-css/lds.css" rel="stylesheet" type="text/css" />
+	<!-- End:CustomCSS -->
 	<!-- datepicker -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css" integrity="sha512-mSYUmp1HYZDFaVKK//63EcZq4iFWFjxSL+Z3T/aCt4IO9Cejm03q3NKKYN6pFQzY0SBOr8h+eCIAZHPXcpZaNw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <script src="<?= base_url() ?>/assets/jquery/jquery.min.js"></script>
 
-  <!-- moment -->
-  <script src="https://momentjs.com/downloads/moment.js"></script>
+	<!-- moment -->
+	<script src="https://momentjs.com/downloads/moment.js"></script>
 
-  <!-- datepicker -->
-  <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
-  <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js" integrity="sha256-0YPKAwZP7Mp3ALMRVB2i8GXeEndvCq3eSl/WsAl1Ryk=" crossorigin="anonymous"></script>
+	<!-- datepicker -->
+	<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js" integrity="sha256-0YPKAwZP7Mp3ALMRVB2i8GXeEndvCq3eSl/WsAl1Ryk=" crossorigin="anonymous"></script>
+	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.8.3/jquery.min.js" integrity="sha512-J9QfbPuFlqGD2CYVCa6zn8/7PEgZnGpM5qtFOBZgwujjDnG5w5Fjx46YzqvIh/ORstcj7luStvvIHkisQi5SKw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
+	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.8.3/jquery.js" integrity="sha512-G74j2JVU7kYK7lEM17+WI0sgxWPGIob8SW93Z/YA+A0VNckeZDKHgyQbkT2uq59CBi/v/gE7bXbLdkpi5QZ9FQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
 
-  <!-- select2 -->
-  <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
-  <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+	<!-- select2 -->
+	<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+	<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 
-  <!-- inputmask -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/5.0.7/jquery.inputmask.min.js" integrity="sha512-jTgBq4+dMYh73dquskmUFEgMY5mptcbqSw2rmhOZZSJjZbD2wMt0H5nhqWtleVkyBEjmzid5nyERPSNBafG4GQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/5.0.7/inputmask.es6.js" integrity="sha512-G307IbFqmfwXgQa2Jbxp4+4HeTp++lVOXNsNadeRIVqBsltSJgpprtBaz2GTs8WBq+KfxUJwfTGSvGV/Xd5AnQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/5.0.7/inputmask.es6.min.js" integrity="sha512-DvIdEanIMhx9JkB/M6blVdr/+b2+MCqSYTgV54T2mdzFAS5XRAfVAC30h4DdvzAAQLGQwAdkQtiPyIqichAzyQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/5.0.7/inputmask.js" integrity="sha512-u9G5WcQXGaw9PgODOBfc5X5AjuWWJJKEUtuEfRAUPJf/SJZ40muyH7hOAFTlplwkEG3jC8PKurH/oSzQP975ng==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/5.0.7/inputmask.min.js" integrity="sha512-czERuOifK1fy7MssE4JJ7d0Av55NPiU2Ymv4R6F0mOGpyPUb9HkP9DcEeE+Qj9In7hWQHGg0CqH1ELgNBJXqGA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/5.0.7/jquery.inputmask.js" integrity="sha512-yUwPZS7XBCeFJsjU9IKl/bUCpWNnFv449g6/ieJKudXqqQu3550ZtEnONSiVNOEGu9Xhmz6rzMAtU2I06KEeRQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/5.0.7/bindings/inputmask.binding.js" integrity="sha512-J6WEJE0No+5Qqm9/T93q88yRQjvoAioXG4gzJ+eqZtLi+ZBgimZDkTiLWiljwrwnoQw+xwECQm282RJ6CrJnlw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js" integrity="sha512-T/tUfKSV1bihCnd+MxKD0Hm1uBBroVYBOYSk1knyvQ9VyZJpc/ALb4P0r6ubwVPSGB2GvjeoMAJJImBG12TiaQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<!-- inputmask -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/5.0.7/jquery.inputmask.min.js" integrity="sha512-jTgBq4+dMYh73dquskmUFEgMY5mptcbqSw2rmhOZZSJjZbD2wMt0H5nhqWtleVkyBEjmzid5nyERPSNBafG4GQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/5.0.7/inputmask.es6.js" integrity="sha512-G307IbFqmfwXgQa2Jbxp4+4HeTp++lVOXNsNadeRIVqBsltSJgpprtBaz2GTs8WBq+KfxUJwfTGSvGV/Xd5AnQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/5.0.7/inputmask.es6.min.js" integrity="sha512-DvIdEanIMhx9JkB/M6blVdr/+b2+MCqSYTgV54T2mdzFAS5XRAfVAC30h4DdvzAAQLGQwAdkQtiPyIqichAzyQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/5.0.7/inputmask.js" integrity="sha512-u9G5WcQXGaw9PgODOBfc5X5AjuWWJJKEUtuEfRAUPJf/SJZ40muyH7hOAFTlplwkEG3jC8PKurH/oSzQP975ng==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/5.0.7/inputmask.min.js" integrity="sha512-czERuOifK1fy7MssE4JJ7d0Av55NPiU2Ymv4R6F0mOGpyPUb9HkP9DcEeE+Qj9In7hWQHGg0CqH1ELgNBJXqGA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/5.0.7/jquery.inputmask.js" integrity="sha512-yUwPZS7XBCeFJsjU9IKl/bUCpWNnFv449g6/ieJKudXqqQu3550ZtEnONSiVNOEGu9Xhmz6rzMAtU2I06KEeRQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/5.0.7/bindings/inputmask.binding.js" integrity="sha512-J6WEJE0No+5Qqm9/T93q88yRQjvoAioXG4gzJ+eqZtLi+ZBgimZDkTiLWiljwrwnoQw+xwECQm282RJ6CrJnlw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js" integrity="sha512-T/tUfKSV1bihCnd+MxKD0Hm1uBBroVYBOYSk1knyvQ9VyZJpc/ALb4P0r6ubwVPSGB2GvjeoMAJJImBG12TiaQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 	<!--end::Global Stylesheets Bundle-->
+	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.blockUI/2.70/jquery.blockUI.min.js" integrity="sha512-eYSzo+20ajZMRsjxB6L7eyqo5kuXuS2+wEbbOkpaur+sA2shQameiJiWEzCIDwJqaB0a4a6tCuEvCOBHUg3Skg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
+	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.blockUI/2.70/jquery.blockUI.js" integrity="sha512-QSb5le+VXUEVEQbfljCv8vPnfSbVoBF/iE+c6MqDDqvmzqnr4KL04qdQMCm0fJvC3gCWMpoYhmvKBFqm1Z4c9A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
 </head>
 <!--end::Head-->
 <!--begin::Body-->
@@ -69,16 +77,8 @@
 						<!--begin::Primary menu-->
 						<div id="kt_aside_menu" class="menu menu-column menu-title-gray-600 menu-icon-gray-400 menu-state-primary menu-state-icon-primary menu-state-bullet-primary menu-arrow-gray-500 fw-bold fs-5" data-kt-menu="true">
 							<div class="menu-item py-2">
-								<a class="menu-link active menu-center" href="#" title="Dashboard" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-dismiss="click" data-bs-placement="right" onclick="HELPER.loadPage('test')">
-									<span class="menu-icon me-0">
-										<!--begin::Svg Icon | path: icons/duotone/Home/Home2.svg-->
-										<span class="svg-icon svg-icon-1">
-											<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-												<path d="M21.4622 10.699C21.4618 10.6986 21.4613 10.6981 21.4609 10.6977L13.3016 2.53955C12.9538 2.19165 12.4914 2 11.9996 2C11.5078 2 11.0454 2.1915 10.6974 2.5394L2.54246 10.6934C2.53971 10.6961 2.53696 10.699 2.53422 10.7018C1.82003 11.42 1.82125 12.5853 2.53773 13.3017C2.86506 13.6292 3.29739 13.8188 3.75962 13.8387C3.77839 13.8405 3.79732 13.8414 3.81639 13.8414H4.14159V19.8453C4.14159 21.0334 5.10833 22 6.29681 22H9.48897C9.81249 22 10.075 21.7377 10.075 21.4141V16.707C10.075 16.1649 10.516 15.7239 11.0582 15.7239H12.941C13.4832 15.7239 13.9242 16.1649 13.9242 16.707V21.4141C13.9242 21.7377 14.1866 22 14.5102 22H17.7024C18.8909 22 19.8576 21.0334 19.8576 19.8453V13.8414H20.1592C20.6508 13.8414 21.1132 13.6499 21.4613 13.302C22.1786 12.5844 22.1789 11.4171 21.4622 10.699V10.699Z" fill="#00B2FF" />
-											</svg>
-										</span>
-										<!--end::Svg Icon-->
-									</span>
+								<a class="menu-link active menu-center" href="javascript:void(0)" title="Dashboard" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-dismiss="click" data-bs-placement="right" onclick="HELPER.loadPage(this)" data-menu='dashboard-Table'>
+									<i class="fa fa-pen text-hover-primary"></i>
 								</a>
 							</div>
 							<div data-kt-menu-trigger="click" data-kt-menu-placement="right-start" data-kt-menu-flip="bottom" class="menu-item py-2">
@@ -2427,7 +2427,7 @@
 				<div class="content d-flex flex-column flex-column-fluid" id="kt_content">
 					<!--begin::Container-->
 					<div class="container" id="kt_content_container">
-						bakso 
+						bakso
 					</div>
 					<!--end::Container-->
 				</div>
@@ -4075,11 +4075,15 @@
 	<!--begin::Global Javascript Bundle(used by all pages)-->
 	<script src="<?php $baseURL ?>/assets/plugins/global/plugins.bundle.js"></script>
 	<script src="<?php $baseURL ?>/assets/js/scripts.bundle.js"></script>
+	<!-- Block UI -->
+	<script type="text/javascript" src="<?php $baseURL ?>/assets/plugins/blockui/jquery.blockui.js"></script>
+
 	<script>
 		BASE_URL = "<?php echo base_url() ?>";
 	</script>
+
+	<!-- HELPER JS -->
 	<script type="text/javascript" src="<?php $baseURL ?>/assets/js/helper.js?v=<?= time() ?>"></script>
-	<!--end::Global Javascript Bundle-->
 	<!--begin::Page Custom Javascript(used by this page)-->
 	<script src="<?php $baseURL ?>/assets/js/custom/widgets.js"></script>
 	<!--end::Page Custom Javascript-->
