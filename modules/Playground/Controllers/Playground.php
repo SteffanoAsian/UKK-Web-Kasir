@@ -26,7 +26,7 @@ class Playground extends \CodeIgniter\Controller
 
     public function read()
     {
-        $query = (new UsersModel())->select(['user_name' => 'test User']);
+        $query = (new UsersModel())->read(['user_username' => 'Kasir']);
         echo "<pre>";
         print_r($query);
         exit;
