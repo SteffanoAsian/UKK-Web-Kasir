@@ -66,6 +66,9 @@
     </script>
     <script src="<?= base_url() ?>/assets/plugins/global/plugins.bundle.js"></script>
     <script src="<?= base_url() ?>/assets/js/scripts.bundle.js"></script>
+    <script type="text/javascript" src="<?php $baseURL ?>/assets/js/helper.js?v=<?= time() ?>"></script>
+    <!-- Block UI -->
+	<script type="text/javascript" src="<?php $baseURL ?>/assets/plugins/blockui/jquery.blockui.js"></script>
 </body>
 
 </html>

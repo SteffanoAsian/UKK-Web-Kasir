@@ -11,7 +11,11 @@ class BaseModel extends Model
     protected $model;
     protected $primary;
     protected $table;
+    protected $viewName;
+    protected $viewMode;
     protected $db;
+    protected $view;
+    protected $fields;
     function __construct(&$model_config = null)
     {
         parent::__construct();
@@ -19,7 +23,11 @@ class BaseModel extends Model
         $this->model = $model_config;
         $this->primary = $this->model['table']['primary'];
         $this->table = $this->model['table']['name'];
+        $this->fields = $this->model['table']['fields'];
+        $this->viewName = $this->model['view']['name'];
+        $this->viewMode = $this->model['view']['mode'];
         $this->db = $this->Db->table($this->table);
+        // $this->view = $this->Db->table($this->viewName);
     }
 
     public function store($id = null, $dataIns = null, $returnLog = true)
@@ -60,9 +68,13 @@ class BaseModel extends Model
         return $query;
     }
 
-    public function select($where = null)
+    public function select($Xdata)
     {
-        $query = $this->db->select()->where($where)->get()->getResultArray();
+        if (!empty($Xdata['sort'])) {
+            $query = $this->db->orderBy($Xdata['sort'])->select()->where($Xdata['filter'])->get()->getResultArray();
+        } else {
+            $query = $this->db->select()->where($Xdata['filter'])->get()->getResultArray();
+        }
 
         $res = [
             'success' => $query ? true : false,
@@ -71,6 +83,23 @@ class BaseModel extends Model
         ];
 
         return $res;
+    }
+
+    public function selectDt($mode = null, $where = null)
+    {
+        $fields = implode(", ", $this->viewMode[$mode]);
+        if (!empty($where)) {
+            $query = $this->db->select($fields)->where($where)->get()->getResultArray();
+        } else {
+            $query = $this->Db->table($this->viewName)->select($fields)->get()->getResultArray();
+        }
+        $row = 1;
+        $res = [];
+        foreach ($query as $k => $v) {
+            $query[$k]['row'] = $row;
+            $row++;
+        }
+        return $query;
     }
 
     public function updateData($id = null, $data = null, $returnLog = true)

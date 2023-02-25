@@ -23,5 +23,4 @@ class Users extends \App\Core\BaseModel
         );
         parent::__construct($model);
     }
-    
 }
