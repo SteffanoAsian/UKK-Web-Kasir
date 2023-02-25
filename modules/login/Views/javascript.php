@@ -2,6 +2,7 @@
 	$(() => {
 		onLogin = () => {
 			var formData = new FormData($('#form-Login')[0]);
+			HELPER.block()
 			$.ajax({
 				url: BASE_URL + "/app-login/doLogin",
 				data: formData,
@@ -11,10 +12,10 @@
 				complete: function(response) {
 					var response = $.parseJSON(response.responseText);
 					if (response.success) {
-						console.log(response);
+						HELPER.unblock(500)
 						window.location.reload();
 					} else {
-						// HELPER.unblock()
+						HELPER.unblock(500)
 						Swal.fire({
 	                        title: "Failed",
 	                        html: response.message,

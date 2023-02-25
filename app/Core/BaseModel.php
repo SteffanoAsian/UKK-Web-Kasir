@@ -60,9 +60,13 @@ class BaseModel extends Model
         return $query;
     }
 
-    public function select($where = null)
+    public function select($Xdata)
     {
-        $query = $this->db->select()->where($where)->get()->getResultArray();
+        if (!empty($Xdata['sort'])) {
+            $query = $this->db->orderBy($Xdata['sort'])->select()->where($Xdata['filter'])->get()->getResultArray();
+        } else {
+            $query = $this->db->select()->where($Xdata['filter'])->get()->getResultArray();
+        }
 
         $res = [
             'success' => $query ? true : false,
