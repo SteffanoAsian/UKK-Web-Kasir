@@ -3,6 +3,7 @@
 namespace Modules\login\Controllers;
 
 use Modules\Users\Models\Users as UsersModel;
+use Modules\Users\Models\UserRole as UserRole;
 
 class Login extends \CodeIgniter\Controller
 {
@@ -14,21 +15,6 @@ class Login extends \CodeIgniter\Controller
             return redirect()->route('main');
         }
     }
-
-    // public function getPage()
-    // {
-    //     $data                     = $this->request->getPost();
-    //     print_r($data);
-    //     exit;
-    //     // $operation 				= (new Menu())->find($data['con']);
-    //     // $module 			    = explode('-', $operation['menu_code']);
-    //     // $fileView 				= (count($module) == 1) ? 'index' : $module[1];
-    //     // $viewPath		        = 'BackEnd\\' . ($module[0]) . '\\Views\\' . $fileView;
-    //     // $operation['view'] 	    = base64_encode(view($viewPath));
-    //     // $operation['isLogin']   = (session()->UserId != '') ? true : false;
-
-    //     // return $this->respond($operation, 200);
-    // }
 
     public function doLogin()
     {
@@ -49,8 +35,8 @@ class Login extends \CodeIgniter\Controller
                     'user_username'  => $user['user_username'],
                     'user_email'     => $user['user_email'],
                     'IsLogin'   => true,
-                    'role_id'    => $user['user_role_id']
-                    // 'Rules'     => $this->getRoles($user['user_id']),
+                    'role_id'    => $user['user_role_id'],
+                    'rules'     => $this->getRoles($user['user_role_id']),
                 ]);
                 $response = [
                     'success'   => true,
@@ -73,9 +59,14 @@ class Login extends \CodeIgniter\Controller
         echo json_encode($response);
     }
 
+    protected function getRoles($roleId)
+    {
+        $rule = (new UserRole())->getRoleAccess($roleId);
+        return $rule;
+    }
+
     public function logout()
     {
-        // echo "Hello lagi";
         session()->destroy();
         return redirect()->route('app-login');
     }
