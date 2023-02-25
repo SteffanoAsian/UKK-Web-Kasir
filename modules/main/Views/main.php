@@ -22,6 +22,7 @@
 	<!-- begin::CustomCSS -->
 	<!-- LDS Loading CSS -->
 	<link href="<?php $baseURL ?>/assets/css/custom-css/lds.css" rel="stylesheet" type="text/css" />
+	<!-- <link href="<?php $baseURL ?>/assets/css/custom-css/custom.css" rel="stylesheet" type="text/css" /> -->
 	<!-- End:CustomCSS -->
 	<!-- datepicker -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css" integrity="sha512-mSYUmp1HYZDFaVKK//63EcZq4iFWFjxSL+Z3T/aCt4IO9Cejm03q3NKKYN6pFQzY0SBOr8h+eCIAZHPXcpZaNw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -32,8 +33,12 @@
 	<!-- datepicker -->
 	<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
 	<script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js" integrity="sha256-0YPKAwZP7Mp3ALMRVB2i8GXeEndvCq3eSl/WsAl1Ryk=" crossorigin="anonymous"></script>
-	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.8.3/jquery.min.js" integrity="sha512-J9QfbPuFlqGD2CYVCa6zn8/7PEgZnGpM5qtFOBZgwujjDnG5w5Fjx46YzqvIh/ORstcj7luStvvIHkisQi5SKw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
-	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.8.3/jquery.js" integrity="sha512-G74j2JVU7kYK7lEM17+WI0sgxWPGIob8SW93Z/YA+A0VNckeZDKHgyQbkT2uq59CBi/v/gE7bXbLdkpi5QZ9FQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
+
+	<!-- datatable -->
+	<!-- <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.2/css/jquery.dataTables.css"> -->
+	<link href="<?php $baseURL ?>/assets/css/jquery.dataTables.css" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.2/js/jquery.dataTables.min.js">
+	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.2/js/dataTables.bootstrap5.min.js">
 
 	<!-- select2 -->
 	<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
@@ -49,8 +54,6 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/5.0.7/bindings/inputmask.binding.js" integrity="sha512-J6WEJE0No+5Qqm9/T93q88yRQjvoAioXG4gzJ+eqZtLi+ZBgimZDkTiLWiljwrwnoQw+xwECQm282RJ6CrJnlw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js" integrity="sha512-T/tUfKSV1bihCnd+MxKD0Hm1uBBroVYBOYSk1knyvQ9VyZJpc/ALb4P0r6ubwVPSGB2GvjeoMAJJImBG12TiaQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 	<!--end::Global Stylesheets Bundle-->
-	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.blockUI/2.70/jquery.blockUI.min.js" integrity="sha512-eYSzo+20ajZMRsjxB6L7eyqo5kuXuS2+wEbbOkpaur+sA2shQameiJiWEzCIDwJqaB0a4a6tCuEvCOBHUg3Skg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
-	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.blockUI/2.70/jquery.blockUI.js" integrity="sha512-QSb5le+VXUEVEQbfljCv8vPnfSbVoBF/iE+c6MqDDqvmzqnr4KL04qdQMCm0fJvC3gCWMpoYhmvKBFqm1Z4c9A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
 </head>
 <!--end::Head-->
 <!--begin::Body-->
@@ -64,7 +67,7 @@
 			<!--begin::Aside-->
 			<div id="kt_aside" class="aside aside-extended bg-white" data-kt-drawer="true" data-kt-drawer-name="aside" data-kt-drawer-activate="{default: true, lg: false}" data-kt-drawer-overlay="true" data-kt-drawer-width="auto" data-kt-drawer-direction="start" data-kt-drawer-toggle="#kt_aside_toggle">
 				<!--begin::Primary-->
-				<div class="aside-primary d-flex flex-column align-items-lg-center flex-row-auto">
+				<div class="aside-primary d-flex flex-column align-items-lg-center flex-row-auto bg-info bg-gradient">
 					<!--begin::Logo-->
 					<div class="aside-logo d-none d-lg-flex flex-column pt-10 py-5" id="kt_aside_logo">
 						<a href="index.html">
@@ -73,10 +76,10 @@
 					</div>
 					<!--end::Logo-->
 					<!--begin::Nav-->
-					<div class="aside-nav d-flex flex-column py-5" id="kt_aside_nav">
+					<div class="aside-nav d-flex flex-column" id="kt_aside_nav">
 						<!--begin::Primary menu-->
 						<div id="kt_aside_menu" class="menu menu-column menu-title-gray-600 menu-icon-gray-400 menu-state-primary menu-state-icon-primary menu-state-bullet-primary menu-arrow-gray-500 fw-bold fs-5" data-kt-menu="true">
-								<?= $menu ?>
+							<?= $menu ?>
 						</div>
 						<!--end::Primary menu-->
 					</div>
@@ -183,7 +186,7 @@
 				<!--begin::Header-->
 				<div id="kt_header" class="header" data-kt-sticky="true" data-kt-sticky-name="header" data-kt-sticky-offset="{default: '200px', lg: '300px'}">
 					<!--begin::Container-->
-					<div class="container-fluid d-flex align-items-stretch justify-content-between" id="kt_header_container">
+					<div class="container-fluid d-flex align-items-stretch justify-content-between bg-dark bg-gradient" id="kt_header_container">
 						<!--begin::Page title-->
 						<div class="page-title d-flex flex-column align-items-start justify-content-center flex-wrap me-lg-2 pb-2 pb-lg-0" data-kt-swapper="true" data-kt-swapper-mode="prepend" data-kt-swapper-parent="{default: '#kt_content_container', lg: '#kt_header_container'}">
 							<!--begin::Heading-->
@@ -1882,16 +1885,16 @@
 				</div>
 				<!--end::Header-->
 				<!--begin::Content-->
-				<div class="content d-flex flex-column flex-column-fluid" id="kt_content">
-					<!--begin::Container-->
-					<div class="container" id="kt_content_container">
+				<div class="content d-flex flex-column flex-column-fluid bg-secondary bg-gradient" id="kt_content">
+					<!-- begin::Container
+					<div class="container" id="kt_content_container"> -->
 						bakso
-					</div>
+					<!-- </div> -->
 					<!--end::Container-->
 				</div>
 				<!--end::Content-->
 				<!--begin::Footer-->
-				<div class="footer py-4 d-flex flex-lg-column" id="kt_footer">
+				<div class="footer py-4 d-flex flex-lg-column bg-dark bg-gradient" id="kt_footer">
 					<!--begin::Container-->
 					<div class="container-fluid d-flex flex-column flex-md-row flex-stack">
 						<!--begin::Copyright-->
@@ -2565,7 +2568,7 @@
 		</div>
 	</div>
 	<!--end::Activities drawer-->
-		
+
 	<!--begin::Exolore drawer-->
 	<div id="kt_explore" class="explore bg-white" data-kt-drawer="true" data-kt-drawer-name="explore" data-kt-drawer-activate="true" data-kt-drawer-overlay="true" data-kt-drawer-width="{default:'300px', 'lg': '440px'}" data-kt-drawer-direction="end" data-kt-drawer-toggle="#kt_explore_toggle" data-kt-drawer-close="#kt_explore_close">
 		<!--begin::Card-->
@@ -3531,11 +3534,13 @@
 	<script src="<?php $baseURL ?>/assets/js/scripts.bundle.js"></script>
 	<!-- Block UI -->
 	<script type="text/javascript" src="<?php $baseURL ?>/assets/plugins/blockui/jquery.blockui.js"></script>
+	<!-- datatable -->
+	<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.13.2/js/jquery.dataTables.js"></script>
 
 	<script>
 		BASE_URL = "<?php echo base_url() ?>";
 	</script>
-
+	<script type="text/javascript" src="<?php $baseURL ?>assets/plugins/datatables/datatables.bundle.js"></script>
 	<!-- HELPER JS -->
 	<script type="text/javascript" src="<?php $baseURL ?>/assets/js/helper.js?v=<?= time() ?>"></script>
 	<!--begin::Page Custom Javascript(used by this page)-->

@@ -35,7 +35,7 @@ class Main extends \CodeIgniter\Controller
         foreach ($menus as $vRule) {
             if ($vRule['menu_hassub'] == 1) {
                 $html .= '<div data-kt-menu-trigger="click" data-kt-menu-placement="right-start" data-kt-menu-flip="bottom" class="menu-item py-2">
-                                <span class="menu-link menu-center" title="' . $vRule['menu_title'] . '" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-dismiss="click" data-bs-placement="right">
+                                <span class="menu-link menu-center text-hover-primary" title="' . $vRule['menu_title'] . '" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-dismiss="click" data-bs-placement="right">
                                     <i class="' . $vRule['menu_icon'] . ' fa-lg text-hover-primary"></i>
                                 </span>';
                 if ($vRule['child']) {
@@ -57,8 +57,8 @@ class Main extends \CodeIgniter\Controller
                 }
             } else {
                 $html .= '<div class="menu-item py-4">
-                            <a class="menu-link active menu-center" href="javascript:void(0)" title="' . $vRule['menu_title'] . '" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-dismiss="click" data-bs-placement="right" onclick="HELPER.loadPage(this)" data-menu="' . $vRule['menu_code'] . '">
-                                <i class="' . $vRule['menu_icon'] . ' fa-lg text-hover-primary"></i>
+                            <a class="menu-link active menu-center text-hover-primary" href="javascript:void(0)" title="' . $vRule['menu_title'] . '" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-dismiss="click" data-bs-placement="right" onclick="HELPER.loadPage(this)" data-menu="' . $vRule['menu_code'] . '">
+                                <i class="' . $vRule['menu_icon'] . ' fa-lg"></i>
                             </a>
                             </div>';
             }
