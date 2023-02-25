@@ -119,7 +119,7 @@ var HELPER = function () {
                 },
                 success: function (pages) {
                     var resp_object = $.parseJSON(pages);
-                    $("#kt_content_container").html(atob(resp_object.view));
+                    $("#kt_content").html(atob(resp_object.view));
                 },
                 error: function () {
                     Swal.fire({
@@ -137,5 +137,58 @@ var HELPER = function () {
             }());
 
         },
+
+        initTable: function (config = null) {
+            console.log(config);
+            config.columnDefs.push(
+                {
+                    defaultContent: "-",
+                    targets: "_all"
+                },
+                {
+                    targets: 0,
+                    searchable: false,
+                    orderable: false,
+                    render: function (data, type, full, meta) {
+                        console.log(full);
+                        return full['row'];
+                    },
+                });
+
+            var xDefault = {
+                lengthMenu: [5, 10, 25, 50, 100],
+
+                pageLength: config.pageLength,
+
+                language: {
+                    'lengthMenu': 'Tampil _MENU_ &nbsp;data per halaman',
+                    "emptyTable": "Tidak ada data yang dapat ditampilkan",
+                    "info": "Menampilkan _START_ s/d _END_ dari _TOTAL_ data",
+                    "infoEmpty": "Tidak ada data yang dapat ditampilkan",
+                    "infoFiltered": "(Ditemukan dari  total _MAX_ data)",
+                    "search": "Pencarian:",
+                    "zeroRecords": "Tidak ada data yang dapat ditampilkan",
+                    "processing": "Memuat data...",
+                },
+
+                searchDelay: 500,
+                processing: true,
+                ajax: {
+                    url: config.url,
+                    type: 'POST',
+                },
+
+                order: [
+                    [config.index, config.sorting]
+                ],
+                fnRowCallback: function (nRow, aData, iDisplayIndex, iDisplayIndexFull) {
+                    $('td:eq(0)', nRow).html(iDisplayIndexFull + 1);
+                },
+            };
+            var el = $("#" + config.el);
+            var dt = $(el).DataTable($.extend(config, xDefault));
+            var dt = $(el).KTDatatable(config);
+            return dt;
+        }
     }
 }();
