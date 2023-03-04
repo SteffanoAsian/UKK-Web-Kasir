@@ -34,9 +34,9 @@ class Main extends \CodeIgniter\Controller
         $menus = $this->getMenuUser(session()->get('role_id'));
         foreach ($menus as $vRule) {
             if ($vRule['menu_hassub'] == 1) {
-                $html .= '<div data-kt-menu-trigger="click" data-kt-menu-placement="right-start" data-kt-menu-flip="bottom" class="menu-item py-2">
-                                <span class="menu-link menu-center text-hover-primary" title="' . $vRule['menu_title'] . '" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-dismiss="click" data-bs-placement="right">
-                                    <i class="' . $vRule['menu_icon'] . ' fa-lg text-hover-primary"></i>
+                $html .= '<div data-kt-menu-trigger="click" data-kt-menu-placement="right-start" data-kt-menu-flip="bottom" class="menu-item py-4">
+                                <span class="menu-link menu-center " title="' . $vRule['menu_title'] . '" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-dismiss="click" data-bs-placement="right">
+                                    <i class="menu-icon ' . $vRule['menu_icon'] . ' fa-lg " id="menu-icon_' . $vRule['menu_code'] . '"></i>
                                 </span>';
                 if ($vRule['child']) {
                     $html .=     '<div class="menu-sub menu-sub-dropdown w-225px px-1 py-4">
@@ -46,19 +46,19 @@ class Main extends \CodeIgniter\Controller
                                         </div>
                                     </div>';
                     foreach ($vRule['child'] as $menuChild) {
-                        $html .= '<div class="menu-item text-hover-primary py-4">
-                                        <a class="menu-link" href="javascript:void(0)" title="' . $menuChild['menu_title'] . '" data-menu="' . $menuChild['menu_code'] . '" onclick="HELPER.loadPage(this)">
-                                            <span class="menu-title"><i class="menu-icon ' . $menuChild['menu_icon'] . '"></i>' . $menuChild['menu_title'] . '</span>
+                        $html .= '<div class="menu-item">
+                                        <a class="menu-link" href="javascript:void(0)" title="' . $menuChild['menu_title'] . '" data-isChild ="true" data-parent="' . $vRule['menu_code'] . '" data-menu="' . $menuChild['menu_code'] . '" onclick="HELPER.loadPage(this)" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-dismiss="click" data-bs-placement="right">
+                                            <span class="menu-title" id="menu-icon_' . $menuChild['menu_code'] . '"><i class="menu-icon ' . $menuChild['menu_icon'] . '"></i>' . $menuChild['menu_title'] . '</span>
                                         </a>
-                                    </div>
-                                </div>
-                            </div>';
+                                    </div>';
                     }
+                    $html .= '</div>
+                            </div>';
                 }
             } else {
                 $html .= '<div class="menu-item py-4">
-                            <a class="menu-link active menu-center text-hover-primary" href="javascript:void(0)" title="' . $vRule['menu_title'] . '" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-dismiss="click" data-bs-placement="right" onclick="HELPER.loadPage(this)" data-menu="' . $vRule['menu_code'] . '">
-                                <i class="' . $vRule['menu_icon'] . ' fa-lg"></i>
+                            <a class="menu-link menu-center" id="' . $vRule['menu_code'] . '" href="javascript:void(0)" title="' . $vRule['menu_title'] . '" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-dismiss="click" data-bs-placement="right" onclick="HELPER.loadPage(this)" data-menu="' . $vRule['menu_code'] . '">
+                                <i class="menu-icon ' . $vRule['menu_icon'] . ' fa-lg" id="menu-icon_' . $vRule['menu_code'] . '"></i>
                             </a>
                             </div>';
             }

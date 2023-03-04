@@ -41,8 +41,9 @@
 	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.2/js/dataTables.bootstrap5.min.js">
 
 	<!-- select2 -->
-	<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
-	<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+	<!-- <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" /> -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/3.5.0/select2-bootstrap.min.css" integrity="sha512-Vr+A4cYbRn/wywBxGPCIcJJoniIymzzUhMjTTtT9rP+lUn5BNR1MSxCatMJtZ0QIlzLrddtpzdV+uSg2vQpPcg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/3.5.0/select2.min.css" integrity="sha512-WVPV4X/HI/9wClnD+CxFC0qSDE7blZgqZQLjrnEXQUhkm0nkDcoux3ysgIb3oG74MEHobuvEQg7W3XvZK9ZC/Q==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 	<!-- inputmask -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/5.0.7/jquery.inputmask.min.js" integrity="sha512-jTgBq4+dMYh73dquskmUFEgMY5mptcbqSw2rmhOZZSJjZbD2wMt0H5nhqWtleVkyBEjmzid5nyERPSNBafG4GQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -76,7 +77,7 @@
 					</div>
 					<!--end::Logo-->
 					<!--begin::Nav-->
-					<div class="aside-nav d-flex flex-column" id="kt_aside_nav">
+					<div class="aside-nav d-flex w-100 pt-5 pt-lg-0" id="kt_aside_nav">
 						<!--begin::Primary menu-->
 						<div id="kt_aside_menu" class="menu menu-column menu-title-gray-600 menu-icon-gray-400 menu-state-primary menu-state-icon-primary menu-state-bullet-primary menu-arrow-gray-500 fw-bold fs-5" data-kt-menu="true">
 							<?= $menu ?>
@@ -1888,7 +1889,7 @@
 				<div class="content d-flex flex-column flex-column-fluid bg-secondary bg-gradient" id="kt_content">
 					<!-- begin::Container
 					<div class="container" id="kt_content_container"> -->
-						bakso
+					bakso
 					<!-- </div> -->
 					<!--end::Container-->
 				</div>
@@ -3534,11 +3535,16 @@
 	<script src="<?php $baseURL ?>/assets/js/scripts.bundle.js"></script>
 	<!-- Block UI -->
 	<script type="text/javascript" src="<?php $baseURL ?>/assets/plugins/blockui/jquery.blockui.js"></script>
+	<!-- <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script> -->
+	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/3.5.0/select2.min.js" integrity="sha512-E/kDI3wGWMS9Ea/EsDJMduyGSSx/VfdNXAMr/URDQwOAGkGn3uYaZa4Y7bim3ad/6mMA82l+9FxNWl64BR9pkw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/3.5.0/js/select2.full.min.js" integrity="sha512-rE0X9hnjMukCIay2mLEjgIvSq6KnARFMWw9DkyAcBe4vPvtx8U90RE8x1v9v0tcp+jTn3bLoHU6RZGEHWSWGNw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
+	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/3.5.0/select2_locale_id.min.js" integrity="sha512-D5OAT1N+957fKsON/GC4X9B7vaUaL8nUxNDyFwd9pvVU39UsWGaXPwtar7/xhtJZLnxGWPZSZ4hlPlzWbFaN9g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
 	<!-- datatable -->
 	<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.13.2/js/jquery.dataTables.js"></script>
 
 	<script>
-		BASE_URL = "<?php echo base_url() ?>";
+		BASE_URL = "<?php echo base_url() ?>/";
 	</script>
 	<script type="text/javascript" src="<?php $baseURL ?>assets/plugins/datatables/datatables.bundle.js"></script>
 	<!-- HELPER JS -->

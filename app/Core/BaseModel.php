@@ -2,6 +2,7 @@
 
 namespace App\Core;
 
+use APP\Libraries\Gen;
 use CodeIgniter\Model;
 
 
@@ -34,9 +35,12 @@ class BaseModel extends Model
     {
         if ($id != null) {
             $dataIns[$this->primary] = $id;
+        }else{
+            $dataIns[$this->primary] = Gen::key();
         }
 
         $query =  $this->db->insert($dataIns);
+
         if ($returnLog) {
             $res = [
                 'success' => $query ? true : false,
@@ -70,10 +74,17 @@ class BaseModel extends Model
 
     public function select($Xdata)
     {
+        $field = [];
+        foreach ($this->fields as $Vfield) {
+                $field[] .= $Vfield['name'];
+        }
+        $fields = implode(", ", $field);
+        // print_r($fields);
+        // exit;
         if (!empty($Xdata['sort'])) {
-            $query = $this->db->orderBy($Xdata['sort'])->select()->where($Xdata['filter'])->get()->getResultArray();
+            $query = $this->db->orderBy($Xdata['sort'])->select($fields)->where($Xdata['filter'])->get()->getResultArray();
         } else {
-            $query = $this->db->select()->where($Xdata['filter'])->get()->getResultArray();
+            $query = $this->db->select($fields)->where($Xdata['filter'])->get()->getResultArray();
         }
 
         $res = [
@@ -85,11 +96,11 @@ class BaseModel extends Model
         return $res;
     }
 
-    public function selectDt($mode = null, $where = null)
+    public function selectDt($mode = null, $where)
     {
         $fields = implode(", ", $this->viewMode[$mode]);
         if (!empty($where)) {
-            $query = $this->db->select($fields)->where($where)->get()->getResultArray();
+            $query = $this->Db->table($this->viewName)->select($fields)->where($where)->get()->getResultArray();
         } else {
             $query = $this->Db->table($this->viewName)->select($fields)->get()->getResultArray();
         }
@@ -110,6 +121,7 @@ class BaseModel extends Model
             $where = [$this->primary => $id];
         }
         $query = $this->db->update($data, $where);
+        
         if ($returnLog) {
             $res = [
                 'success' => $query ? true : false,
