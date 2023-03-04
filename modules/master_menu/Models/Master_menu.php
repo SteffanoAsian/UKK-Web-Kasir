@@ -1,6 +1,6 @@
 <?php
 
-namespace Modules\Master_menu\Models;
+namespace Modules\master_menu\Models;
 
 class Master_menu extends \App\Core\BaseModel
 {
@@ -16,6 +16,8 @@ class Master_menu extends \App\Core\BaseModel
                     array('name' => 'master_menu_jenis_id'),
                     array('name' => 'master_menu_gambar'),
                     array('name' => 'master_menu_harga'),
+                    array('name' => 'master_menu_created_at'),
+                    array('name' => 'master_menu_deleted_at'),
                     array('name' => 'master_menu_status'),
                 )
             ),
@@ -25,10 +27,9 @@ class Master_menu extends \App\Core\BaseModel
                     'datatable' => array(
                         'master_menu_id',
                         'master_menu_nama',
-                        // 'master_menu_jenis_id',
                         'master_jenis_nama',
                         'master_menu_harga',
-                        'master_menu_gambar',
+                        'master_menu_status',
                     )
                 )
             )

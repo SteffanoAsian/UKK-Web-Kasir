@@ -2,7 +2,7 @@
 <!--begin::Head-->
 
 <head>
-    <title>Jet HTML Pro - Bootstrap 5 HTML Multipurpose Admin Dashboard Theme by Keenthemes</title>
+    <title>Wikusama Cafe POS - Login</title>
     <meta charset="utf-8" />
     <meta name="description" content="Jet admin dashboard live demo. Check out all the features of the admin panel. A large number of settings, additional services and widgets." />
     <meta name="keywords" content="Jet theme, bootstrap, bootstrap 5, admin themes, free admin themes, bootstrap admin, bootstrap dashboard" />
@@ -28,7 +28,7 @@
     <div class="d-flex flex-column flex-root">
         <div class="d-flex flex-column flex-column-fluid bgi-position-y-bottom position-x-center bgi-no-repeat bgi-size-contain bgi-attachment-fixed" style="background-image: url(<?= base_url() ?>/assets/media/illustrations/sigma-1/14.png)">
             <div class="d-flex flex-center flex-column flex-column-fluid p-10 pb-lg-20">
-                <a href="<?= base_url() ?>/?page=index" class="mb-12">
+                <a href="<?= base_url() ?>/main" class="mb-12">
                     <img alt="Logo" src="<?= base_url() ?>/assets/media/logos/logo-default.svg" class="h-60px" />
                 </a>
                 <div class="w-lg-500px bg-white rounded shadow-sm p-10 p-lg-15 mx-auto">
@@ -36,7 +36,8 @@
                         <!--begin::Heading-->
                         <div class="text-center mb-10">
                             <h1 class="text-dark mb-3">
-                                Login POS APP</h1>
+                                Selamat datang di <br>
+                            Aplikasi POS Wikusama Cafe</h1>
                         </div>
                         <div class="fv-row mb-10">
                             <input class="form-control form-control-lg form-control-solid" type="text" name="uname" id="uname" autocomplete="off" placeholder="Username or Email" required />
