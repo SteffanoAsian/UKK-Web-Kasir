@@ -30,6 +30,7 @@ class Master_menu extends \App\Core\BaseModel
                         'master_jenis_nama',
                         'master_menu_harga',
                         'master_menu_status',
+                        'master_menu_deleted_at',
                     )
                 )
             )

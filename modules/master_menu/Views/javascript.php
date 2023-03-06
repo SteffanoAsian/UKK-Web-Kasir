@@ -98,7 +98,7 @@
             },
             success: function(response) {
                 var response = $.parseJSON(response)
-                HELPER.populateForm($(`[id="form-menu"]`), response);
+                HELPER.populateForm($('#form-menu'), response);
             },
             complete: function(response) {
                 setTimeout(function() {
@@ -128,7 +128,6 @@
             grouped: true,
             url: HELPER.api.loadJenisMenu,
             placeholder: '-Pilih Jenis Menu-',
-            // dropdownParent: '#modal-edit',
         })
     }
 

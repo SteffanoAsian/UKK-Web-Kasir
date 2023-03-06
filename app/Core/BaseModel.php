@@ -35,7 +35,7 @@ class BaseModel extends Model
     {
         if ($id != null) {
             $dataIns[$this->primary] = $id;
-        }else{
+        } else {
             $dataIns[$this->primary] = Gen::key();
         }
 
@@ -45,7 +45,7 @@ class BaseModel extends Model
             $res = [
                 'success' => $query ? true : false,
                 'message' => $query ? 'Successfully Saved Data' : 'Failed to Save Data, Please Contact your System Administrator',
-                'record' => $this->read($id),
+                'record' => $this->read($id, true, 'datatable'),
             ];
         } else {
             $res = [
@@ -57,7 +57,7 @@ class BaseModel extends Model
         return $res;
     }
 
-    public function read($id = null)
+    public function read($id = null, $withView = false, $mode = '')
     {
         if (is_array($id)) {
             $where = $id;
@@ -65,26 +65,42 @@ class BaseModel extends Model
             $where = [$this->primary => $id];
         }
 
-        $query = $this->db->select()
-            ->where($where)
-            ->get()->getRowArray();
+        $field = [];
+        foreach ($this->fields as $Vfield) {
+            $field[] .= $Vfield['name'];
+        }
+        $fields = implode(", ", $field);
 
+        if ($withView == true) {
+            $Viewfields = implode(", ", $this->viewMode[$mode]);
+            $query = $this->Db->table($this->viewName)->select($Viewfields)->where($where)->get()->getRowArray();
+        } else {
+            $query = $this->db->select($fields)->where($where)->get()->getRowArray();
+        }
         return $query;
     }
 
-    public function select($Xdata)
+    public function select($Xdata, $withView = false, $mode = '')
     {
         $field = [];
         foreach ($this->fields as $Vfield) {
-                $field[] .= $Vfield['name'];
+            $field[] .= $Vfield['name'];
         }
         $fields = implode(", ", $field);
-        // print_r($fields);
-        // exit;
-        if (!empty($Xdata['sort'])) {
-            $query = $this->db->orderBy($Xdata['sort'])->select($fields)->where($Xdata['filter'])->get()->getResultArray();
+
+        if ($withView == true) {
+            $Viewfields = implode(", ", $this->viewMode[$mode]);
+            if (!empty($Xdata['sort'])) {
+                $query = $this->Db->table($this->viewName)->orderBy($Xdata['sort'])->select($Viewfields)->where($Xdata['filter'])->get()->getResultArray();
+            } else {
+                $query = $this->Db->table($this->viewName)->select($Viewfields)->where($Xdata['filter'])->get()->getResultArray();
+            }
         } else {
-            $query = $this->db->select($fields)->where($Xdata['filter'])->get()->getResultArray();
+            if (!empty($Xdata['sort'])) {
+                $query = $this->db->orderBy($Xdata['sort'])->select($fields)->where($Xdata['filter'])->get()->getResultArray();
+            } else {
+                $query = $this->db->select($fields)->where($Xdata['filter'])->get()->getResultArray();
+            }
         }
 
         $res = [
@@ -121,19 +137,22 @@ class BaseModel extends Model
             $where = [$this->primary => $id];
         }
         $query = $this->db->update($data, $where);
-        
-        if ($returnLog) {
-            $res = [
-                'success' => $query ? true : false,
-                'message' => $query ? 'Successfully Updated Data' : 'Failed to Update Data, Please Contact your System Administrator',
-                'record' => $this->read($id),
-            ];
-        } else {
-            $res = [
-                'success' => $query ? true : false,
-                'message' => $query ? 'Successfully Updated Data' : 'Failed to Update Data, Please Contact your System Administrator',
-            ];
+
+        // if ($returnLog) {
+        //     $res = [
+        //         'success' => $query ? true : false,
+        //         'message' => $query ? 'Successfully Updated Data' : 'Failed to Update Data, Please Contact your System Administrator',
+        //         'record' => $this->read($id),
+        //     ];
+        // } else {
+        $res = [
+            'success' => $query ? true : false,
+            'message' => $query ? 'Successfully Updated Data' : 'Failed to Update Data, Please Contact your System Administrator',
+        ];
+        if (!is_array($id) && $returnLog) {
+            $res['record'] = $this->read($id);
         }
+        // }
 
         return $res;
     }

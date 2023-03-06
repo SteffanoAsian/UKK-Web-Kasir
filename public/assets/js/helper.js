@@ -39,7 +39,7 @@ var HELPER = function () {
 
         populateForm: function (frm, data) {
             $.each(data, function (key, value) {
-                var $ctrl = $('[name="' + key + '"]', frm);
+                var $ctrl = $('[id="' + key + '"]', frm);
                 if ($ctrl.is('select')) {
                     if ($ctrl.data().hasOwnProperty('select2')) {
                         $ctrl.val(value).trigger('change');
@@ -121,7 +121,6 @@ var HELPER = function () {
                                 dropdownAutoWidth: true,
                                 width: '100%',
                                 placeholder: config.placeholder,
-                                dropdownParent: config.dropdownParent,
                             });
                         } else {
                             $('#' + config.el).select2({
@@ -129,7 +128,6 @@ var HELPER = function () {
                                 dropdownAutoWidth: true,
                                 width: '100%',
                                 placeholder: config.placeholder,
-                                dropdownParent: config.dropdownParent,
                             });
                         }
                     }
