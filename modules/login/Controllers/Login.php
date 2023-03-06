@@ -25,6 +25,7 @@ class Login extends \CodeIgniter\Controller
         ];
 
         $user = (new UsersModel())->read($where);
+        // print_r($user);exit;
 
         if (!empty($user)) {
             if ($data['user_password'] = $user['user_password']) {
