@@ -19,8 +19,9 @@ class Transaksi extends \App\Core\BaseModel
                     array('name' => 'transaksi_total'),
                     array('name' => 'transaksi_nominal_bayar'),
                     array('name' => 'transaksi_nominal_kembali'),
-                    array('name' => 'transaksi_meja_no'),
+                    array('name' => 'transaksi_meja_id'),
                     array('name' => 'transaksi_notes'),
+                    array('name' => 'transaksi_date'),
                 )
             ),
             'view' => array(

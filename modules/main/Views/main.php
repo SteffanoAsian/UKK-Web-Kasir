@@ -55,6 +55,8 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/5.0.7/bindings/inputmask.binding.js" integrity="sha512-J6WEJE0No+5Qqm9/T93q88yRQjvoAioXG4gzJ+eqZtLi+ZBgimZDkTiLWiljwrwnoQw+xwECQm282RJ6CrJnlw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js" integrity="sha512-T/tUfKSV1bihCnd+MxKD0Hm1uBBroVYBOYSk1knyvQ9VyZJpc/ALb4P0r6ubwVPSGB2GvjeoMAJJImBG12TiaQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 	<!--end::Global Stylesheets Bundle-->
+	<!-- <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/bootstrap/3/css/bootstrap.css" /> -->
+	<!-- <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.css" /> -->
 </head>
 <!--end::Head-->
 <!--begin::Body-->
@@ -3536,13 +3538,20 @@
 	<!-- Block UI -->
 	<script type="text/javascript" src="<?php $baseURL ?>/assets/plugins/blockui/jquery.blockui.js"></script>
 	<!-- <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script> -->
-	
+
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/3.5.0/select2.min.js" integrity="sha512-E/kDI3wGWMS9Ea/EsDJMduyGSSx/VfdNXAMr/URDQwOAGkGn3uYaZa4Y7bim3ad/6mMA82l+9FxNWl64BR9pkw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/3.5.0/js/select2.full.min.js" integrity="sha512-rE0X9hnjMukCIay2mLEjgIvSq6KnARFMWw9DkyAcBe4vPvtx8U90RE8x1v9v0tcp+jTn3bLoHU6RZGEHWSWGNw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
 	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/3.5.0/select2_locale_id.min.js" integrity="sha512-D5OAT1N+957fKsON/GC4X9B7vaUaL8nUxNDyFwd9pvVU39UsWGaXPwtar7/xhtJZLnxGWPZSZ4hlPlzWbFaN9g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
 	<!-- datatable -->
 	<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.13.2/js/jquery.dataTables.js"></script>
-
+	<!-- amchart -->
+	<!-- <script src="https://cdn.amcharts.com/lib/4/core.js"></script> -->
+	<!-- <script src="https://cdn.amcharts.com/lib/4/charts.js"></script> -->
+	<!-- <script src="https://cdn.amcharts.com/lib/4/themes/animated.js"></script> -->
+	<script src="https://cdn.amcharts.com/lib/5/index.js"></script>
+	<script src="https://cdn.amcharts.com/lib/5/xy.js"></script>
+	<script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
+	<script src="//cdn.amcharts.com/lib/5/themes/Micro.js"></script>
 	<script>
 		BASE_URL = "<?php echo base_url() ?>/";
 	</script>
@@ -3552,6 +3561,9 @@
 	<!--begin::Page Custom Javascript(used by this page)-->
 	<script src="<?php $baseURL ?>/assets/js/custom/widgets.js"></script>
 	<!--end::Page Custom Javascript-->
+	<!-- <script type="text/javascript" src="//cdn.jsdelivr.net/jquery/1/jquery.min.js"></script> -->
+	<script type="text/javascript" src="//cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+	<script type="text/javascript" src="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.js"></script>
 	<!--end::Javascript-->
 </body>
 <!--end::Body-->

@@ -28,7 +28,7 @@ class Login extends \CodeIgniter\Controller
         // print_r($user);exit;
 
         if (!empty($user)) {
-            if ($data['user_password'] = $user['user_password']) {
+            if (md5($data['user_password']) === $user['user_password']) {
                 // if (password_verify($data['user_password'], $user['user_password'])) {
                 session()->set([
                     'user_id'    => $user['user_id'],

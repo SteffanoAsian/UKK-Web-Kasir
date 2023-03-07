@@ -1,37 +1,5 @@
 <!--begin::Row-->
-<div class="row g-5 gx-xxl-8 mb-xxl-3">
-    <!--begin::Col-->
-    <div class="col-xxl-4">
-        <!--begin::Engage Widget 1-->
-        <div class="card card-xxl-stretch">
-            <!--begin::Card body-->
-            <div class="card-body d-flex flex-column justify-content-between h-100">
-                <!--begin::Section-->
-                <div class="pt-12">
-                    <!--begin::Title-->
-                    <h3 class="text-dark text-center fs-1 fw-boldest line-height-lg">Kickstart
-                        <br />First Application
-                    </h3>
-                    <!--end::Title-->
-                    <!--begin::Text-->
-                    <div class="text-center text-gray-600 fs-5 fw-bold pt-4">Outlines keep you honest. They stoping you from amazing poorly about mega drive</div>
-                    <!--end::Text-->
-                    <!--begin::Action-->
-                    <div class="text-center py-7 mb-18">
-                        <a href="#" class="btn btn-primary fs-6 px-6" data-bs-toggle="modal" data-bs-target="#kt_modal_create_app">Create App</a>
-                    </div>
-                    <!--end::Action-->
-                </div>
-                <!--end::Section-->
-                <!--begin::Image-->
-                <div class="flex-grow-1 bgi-no-repeat bgi-size-contain bgi-position-x-center bgi-position-y-bottom card-rounded-bottom h-150px" style="background-image:url('assets/media/illustrations/user-welcome.png')"></div>
-                <!--end::Image-->
-            </div>
-            <!--end::Card body-->
-        </div>
-        <!--end::Engage Widget 1-->
-    </div>
-    <!--end::Col-->
+<div class="row g-5 gx-xxl-8 mb-xxl-3 p-5">
     <!--begin::Col-->
     <div class="col-xxl-8">
         <!--begin::Chart Widget 1-->
@@ -40,8 +8,8 @@
             <div class="card-header border-0 pt-5">
                 <!--begin::Card title-->
                 <h3 class="card-title align-items-start flex-column">
-                    <span class="card-label fw-boldest fs-3 text-dark">Authors Overview</span>
-                    <span class="text-gray-400 mt-2 fw-bold fs-6">22M total income</span>
+                    <span class="card-label fw-boldest fs-3 text-dark">Hai, Manusia</span>
+                    <span class="text-info mt-2 fw-bold fs-6">Berikut rekap Penjualan Wiku Coffee</span>
                 </h3>
                 <!--end::Card title-->
                 <!--begin::Card toolbar-->
@@ -116,172 +84,185 @@
                             <!--end::Col-->
                         </div>
                         <!--end::Row-->
+                        <form action="javascript:filterChartRekap()" method="post" id="form-filterRekap" name="form-filterRekap" autocomplete="off" enctype="multipart/form-data">
+                            <div class="card-body mx-20">
+                                <div class="col-md-5">
+                                    <input type="text" class="" id="filterRekap"/>
+                                </div>
+                                <div class="col-md-5">
+                                    <button type="submit" class="btn btn-success" id="btn-save" style="width: 100%;"><i class="fa fa-save"></i>Filter</button>
+                                </div>
+                            </div>
+                        </form>
                         <!--begin::Chart-->
-                        <div class="px-4 mt-7" id="kt_charts_widget_1_chart_1" style="height: 350px"></div>
-                        <!--end::Chart-->
-                    </div>
-                    <!--end::Tap pane-->
-                    <!--begin::Tap pane-->
-                    <div class="tab-pane fade" id="kt_chart_widget_1_tab_pane_2">
-                        <!--begin::Row-->
-                        <div class="row p-0 px-9">
-                            <!--begin::Col-->
-                            <div class="col">
-                                <!--begin::Stat-->
-                                <div class="border border-dashed border-gray-300 text-center min-w-125px rounded pt-6 pb-4 my-3">
-                                    <span class="fs-4 fw-bold text-gray-400 d-block">User Sign-in</span>
-                                    <span class="fs-2x fw-boldest text-gray-800" data-kt-countup="true" data-kt-countup-value="2472">0</span>
-                                </div>
-                                <!--end::Stat-->
-                            </div>
-                            <!--end::Col-->
-                            <!--begin::Col-->
-                            <div class="col">
-                                <!--begin::Stat-->
-                                <div class="border border-dashed border-gray-300 text-center min-w-125px rounded pt-6 pb-4 my-3">
-                                    <span class="fs-4 fw-bold text-gray-400 d-block">Admin Sign-in</span>
-                                    <span class="fs-2x fw-boldest text-gray-800" data-kt-countup="true" data-kt-countup-value="34">0</span>
-                                </div>
-                                <!--end::Stat-->
-                            </div>
-                            <!--end::Col-->
-                            <!--begin::Col-->
-                            <div class="col">
-                                <!--begin::Stat-->
-                                <div class="border border-dashed border-gray-300 text-center min-w-125px rounded pt-6 pb-4 my-3">
-                                    <span class="fs-4 fw-bold text-gray-400 d-block">Author Sign-in</span>
-                                    <span class="fs-2x fw-boldest text-gray-800" data-kt-countup="true" data-kt-countup-value="419">0</span>
-                                </div>
-                                <!--end::Stat-->
-                            </div>
-                            <!--end::Col-->
-                            <!--begin::Col-->
-                            <div class="col">
-                                <!--begin::Stat-->
-                                <div class="border border-dashed border-gray-300 text-center min-w-125px rounded pt-6 pb-4 my-3">
-                                    <span class="fs-4 fw-bold text-gray-400 d-block">Failed Attempts</span>
-                                    <span class="fs-2x fw-boldest text-gray-800" data-kt-countup="true" data-kt-countup-value="12">0</span>
-                                </div>
-                                <!--end::Stat-->
-                            </div>
-                            <!--end::Col-->
+                        <div class="px-4 mt-7" id="chartdiv" style="width: 100%;height: 500px;">
+
                         </div>
-                        <!--end::Row-->
-                        <!--begin::Chart-->
-                        <div class="px-4 mt-7" id="kt_charts_widget_1_chart_2" style="height: 350px"></div>
-                        <!--end::Chart-->
                     </div>
-                    <!--end::Tap pane-->
-                    <!--begin::Tap pane-->
-                    <div class="tab-pane fade" id="kt_chart_widget_1_tab_pane_3">
-                        <!--begin::Row-->
-                        <div class="row p-0 px-9">
-                            <!--begin::Col-->
-                            <div class="col">
-                                <!--begin::Stat-->
-                                <div class="border border-dashed border-gray-300 text-center min-w-125px rounded pt-6 pb-4 my-3">
-                                    <span class="fs-4 fw-bold text-gray-400 d-block">User Sign-in</span>
-                                    <span class="fs-2x fw-boldest text-gray-800" data-kt-countup="true" data-kt-countup-value="2917">0</span>
-                                </div>
-                                <!--end::Stat-->
-                            </div>
-                            <!--end::Col-->
-                            <!--begin::Col-->
-                            <div class="col">
-                                <!--begin::Stat-->
-                                <div class="border border-dashed border-gray-300 text-center min-w-125px rounded pt-6 pb-4 my-3">
-                                    <span class="fs-4 fw-bold text-gray-400 d-block">Admin Sign-in</span>
-                                    <span class="fs-2x fw-boldest text-gray-800" data-kt-countup="true" data-kt-countup-value="102">0</span>
-                                </div>
-                                <!--end::Stat-->
-                            </div>
-                            <!--end::Col-->
-                            <!--begin::Col-->
-                            <div class="col">
-                                <!--begin::Stat-->
-                                <div class="border border-dashed border-gray-300 text-center min-w-125px rounded pt-6 pb-4 my-3">
-                                    <span class="fs-4 fw-bold text-gray-400 d-block">Author Sign-in</span>
-                                    <span class="fs-2x fw-boldest text-gray-800" data-kt-countup="true" data-kt-countup-value="219">0</span>
-                                </div>
-                                <!--end::Stat-->
-                            </div>
-                            <!--end::Col-->
-                            <!--begin::Col-->
-                            <div class="col">
-                                <!--begin::Stat-->
-                                <div class="border border-dashed border-gray-300 text-center min-w-125px rounded pt-6 pb-4 my-3">
-                                    <span class="fs-4 fw-bold text-gray-400 d-block">Failed Attempts</span>
-                                    <span class="fs-2x fw-boldest text-gray-800" data-kt-countup="true" data-kt-countup-value="15">0</span>
-                                </div>
-                                <!--end::Stat-->
-                            </div>
-                            <!--end::Col-->
-                        </div>
-                        <!--end::Row-->
-                        <!--begin::Chart-->
-                        <div class="px-4 mt-7" id="kt_charts_widget_1_chart_3" style="height: 350px"></div>
-                        <!--end::Chart-->
-                    </div>
-                    <!--end::Tap pane-->
-                    <!--begin::Tap pane-->
-                    <div class="tab-pane fade" id="kt_chart_widget_1_tab_pane_4">
-                        <!--begin::Row-->
-                        <div class="row p-0 px-9">
-                            <!--begin::Col-->
-                            <div class="col">
-                                <!--begin::Stat-->
-                                <div class="border border-dashed border-gray-300 text-center min-w-125px rounded pt-6 pb-4 my-3">
-                                    <span class="fs-4 fw-bold text-gray-400 d-block">User Sign-in</span>
-                                    <span class="fs-2x fw-boldest text-gray-800" data-kt-countup="true" data-kt-countup-value="7392">0</span>
-                                </div>
-                                <!--end::Stat-->
-                            </div>
-                            <!--end::Col-->
-                            <!--begin::Col-->
-                            <div class="col">
-                                <!--begin::Stat-->
-                                <div class="border border-dashed border-gray-300 text-center min-w-125px rounded pt-6 pb-4 my-3">
-                                    <span class="fs-4 fw-bold text-gray-400 d-block">Admin Sign-in</span>
-                                    <span class="fs-2x fw-boldest text-gray-800" data-kt-countup="true" data-kt-countup-value="23">0</span>
-                                </div>
-                                <!--end::Stat-->
-                            </div>
-                            <!--end::Col-->
-                            <!--begin::Col-->
-                            <div class="col">
-                                <!--begin::Stat-->
-                                <div class="border border-dashed border-gray-300 text-center min-w-125px rounded pt-6 pb-4 my-3">
-                                    <span class="fs-4 fw-bold text-gray-400 d-block">Author Sign-in</span>
-                                    <span class="fs-2x fw-boldest text-gray-800" data-kt-countup="true" data-kt-countup-value="418">0</span>
-                                </div>
-                                <!--end::Stat-->
-                            </div>
-                            <!--end::Col-->
-                            <!--begin::Col-->
-                            <div class="col">
-                                <!--begin::Stat-->
-                                <div class="border border-dashed border-gray-300 text-center min-w-125px rounded pt-6 pb-4 my-3">
-                                    <span class="fs-4 fw-bold text-gray-400 d-block">Failed Attempts</span>
-                                    <span class="fs-2x fw-boldest text-gray-800" data-kt-countup="true" data-kt-countup-value="11">0</span>
-                                </div>
-                                <!--end::Stat-->
-                            </div>
-                            <!--end::Col-->
-                        </div>
-                        <!--end::Row-->
-                        <!--begin::Chart-->
-                        <div class="px-4 mt-7" id="kt_charts_widget_1_chart_4" style="height: 350px"></div>
-                        <!--end::Chart-->
-                    </div>
-                    <!--end::Tap pane-->
+                    <!--end::Chart-->
                 </div>
-                <!--end::Tab content-->
+                <!--end::Tap pane-->
+                <!--begin::Tap pane-->
+                <div class="tab-pane fade" id="kt_chart_widget_1_tab_pane_2">
+                    <!--begin::Row-->
+                    <div class="row p-0 px-9">
+                        <!--begin::Col-->
+                        <div class="col">
+                            <!--begin::Stat-->
+                            <div class="border border-dashed border-gray-300 text-center min-w-125px rounded pt-6 pb-4 my-3">
+                                <span class="fs-4 fw-bold text-gray-400 d-block">User Sign-in</span>
+                                <span class="fs-2x fw-boldest text-gray-800" data-kt-countup="true" data-kt-countup-value="2472">0</span>
+                            </div>
+                            <!--end::Stat-->
+                        </div>
+                        <!--end::Col-->
+                        <!--begin::Col-->
+                        <div class="col">
+                            <!--begin::Stat-->
+                            <div class="border border-dashed border-gray-300 text-center min-w-125px rounded pt-6 pb-4 my-3">
+                                <span class="fs-4 fw-bold text-gray-400 d-block">Admin Sign-in</span>
+                                <span class="fs-2x fw-boldest text-gray-800" data-kt-countup="true" data-kt-countup-value="34">0</span>
+                            </div>
+                            <!--end::Stat-->
+                        </div>
+                        <!--end::Col-->
+                        <!--begin::Col-->
+                        <div class="col">
+                            <!--begin::Stat-->
+                            <div class="border border-dashed border-gray-300 text-center min-w-125px rounded pt-6 pb-4 my-3">
+                                <span class="fs-4 fw-bold text-gray-400 d-block">Author Sign-in</span>
+                                <span class="fs-2x fw-boldest text-gray-800" data-kt-countup="true" data-kt-countup-value="419">0</span>
+                            </div>
+                            <!--end::Stat-->
+                        </div>
+                        <!--end::Col-->
+                        <!--begin::Col-->
+                        <div class="col">
+                            <!--begin::Stat-->
+                            <div class="border border-dashed border-gray-300 text-center min-w-125px rounded pt-6 pb-4 my-3">
+                                <span class="fs-4 fw-bold text-gray-400 d-block">Failed Attempts</span>
+                                <span class="fs-2x fw-boldest text-gray-800" data-kt-countup="true" data-kt-countup-value="12">0</span>
+                            </div>
+                            <!--end::Stat-->
+                        </div>
+                        <!--end::Col-->
+                    </div>
+                    <!--end::Row-->
+                    <!--begin::Chart-->
+                    <div class="px-4 mt-7" id="kt_charts_widget_1_chart_2" style="height: 350px"></div>
+                    <!--end::Chart-->
+                </div>
+                <!--end::Tap pane-->
+                <!--begin::Tap pane-->
+                <div class="tab-pane fade" id="kt_chart_widget_1_tab_pane_3">
+                    <!--begin::Row-->
+                    <div class="row p-0 px-9">
+                        <!--begin::Col-->
+                        <div class="col">
+                            <!--begin::Stat-->
+                            <div class="border border-dashed border-gray-300 text-center min-w-125px rounded pt-6 pb-4 my-3">
+                                <span class="fs-4 fw-bold text-gray-400 d-block">User Sign-in</span>
+                                <span class="fs-2x fw-boldest text-gray-800" data-kt-countup="true" data-kt-countup-value="2917">0</span>
+                            </div>
+                            <!--end::Stat-->
+                        </div>
+                        <!--end::Col-->
+                        <!--begin::Col-->
+                        <div class="col">
+                            <!--begin::Stat-->
+                            <div class="border border-dashed border-gray-300 text-center min-w-125px rounded pt-6 pb-4 my-3">
+                                <span class="fs-4 fw-bold text-gray-400 d-block">Admin Sign-in</span>
+                                <span class="fs-2x fw-boldest text-gray-800" data-kt-countup="true" data-kt-countup-value="102">0</span>
+                            </div>
+                            <!--end::Stat-->
+                        </div>
+                        <!--end::Col-->
+                        <!--begin::Col-->
+                        <div class="col">
+                            <!--begin::Stat-->
+                            <div class="border border-dashed border-gray-300 text-center min-w-125px rounded pt-6 pb-4 my-3">
+                                <span class="fs-4 fw-bold text-gray-400 d-block">Author Sign-in</span>
+                                <span class="fs-2x fw-boldest text-gray-800" data-kt-countup="true" data-kt-countup-value="219">0</span>
+                            </div>
+                            <!--end::Stat-->
+                        </div>
+                        <!--end::Col-->
+                        <!--begin::Col-->
+                        <div class="col">
+                            <!--begin::Stat-->
+                            <div class="border border-dashed border-gray-300 text-center min-w-125px rounded pt-6 pb-4 my-3">
+                                <span class="fs-4 fw-bold text-gray-400 d-block">Failed Attempts</span>
+                                <span class="fs-2x fw-boldest text-gray-800" data-kt-countup="true" data-kt-countup-value="15">0</span>
+                            </div>
+                            <!--end::Stat-->
+                        </div>
+                        <!--end::Col-->
+                    </div>
+                    <!--end::Row-->
+                    <!--begin::Chart-->
+                    <div class="px-4 mt-7" id="kt_charts_widget_1_chart_3" style="height: 350px"></div>
+                    <!--end::Chart-->
+                </div>
+                <!--end::Tap pane-->
+                <!--begin::Tap pane-->
+                <div class="tab-pane fade" id="kt_chart_widget_1_tab_pane_4">
+                    <!--begin::Row-->
+                    <div class="row p-0 px-9">
+                        <!--begin::Col-->
+                        <div class="col">
+                            <!--begin::Stat-->
+                            <div class="border border-dashed border-gray-300 text-center min-w-125px rounded pt-6 pb-4 my-3">
+                                <span class="fs-4 fw-bold text-gray-400 d-block">User Sign-in</span>
+                                <span class="fs-2x fw-boldest text-gray-800" data-kt-countup="true" data-kt-countup-value="7392">0</span>
+                            </div>
+                            <!--end::Stat-->
+                        </div>
+                        <!--end::Col-->
+                        <!--begin::Col-->
+                        <div class="col">
+                            <!--begin::Stat-->
+                            <div class="border border-dashed border-gray-300 text-center min-w-125px rounded pt-6 pb-4 my-3">
+                                <span class="fs-4 fw-bold text-gray-400 d-block">Admin Sign-in</span>
+                                <span class="fs-2x fw-boldest text-gray-800" data-kt-countup="true" data-kt-countup-value="23">0</span>
+                            </div>
+                            <!--end::Stat-->
+                        </div>
+                        <!--end::Col-->
+                        <!--begin::Col-->
+                        <div class="col">
+                            <!--begin::Stat-->
+                            <div class="border border-dashed border-gray-300 text-center min-w-125px rounded pt-6 pb-4 my-3">
+                                <span class="fs-4 fw-bold text-gray-400 d-block">Author Sign-in</span>
+                                <span class="fs-2x fw-boldest text-gray-800" data-kt-countup="true" data-kt-countup-value="418">0</span>
+                            </div>
+                            <!--end::Stat-->
+                        </div>
+                        <!--end::Col-->
+                        <!--begin::Col-->
+                        <div class="col">
+                            <!--begin::Stat-->
+                            <div class="border border-dashed border-gray-300 text-center min-w-125px rounded pt-6 pb-4 my-3">
+                                <span class="fs-4 fw-bold text-gray-400 d-block">Failed Attempts</span>
+                                <span class="fs-2x fw-boldest text-gray-800" data-kt-countup="true" data-kt-countup-value="11">0</span>
+                            </div>
+                            <!--end::Stat-->
+                        </div>
+                        <!--end::Col-->
+                    </div>
+                    <!--end::Row-->
+                    <!--begin::Chart-->
+                    <div class="px-4 mt-7" id="kt_charts_widget_1_chart_4" style="height: 350px"></div>
+                    <!--end::Chart-->
+                </div>
+                <!--end::Tap pane-->
             </div>
-            <!--end::Card body-->
+            <!--end::Tab content-->
         </div>
-        <!--end::Chart Widget 1-->
+        <!--end::Card body-->
     </div>
-    <!--end::Col-->
+    <!--end::Chart Widget 1-->
+</div>
+<!--end::Col-->
 </div>
 <!--end::Row-->
 <!--Begin::Row-->
@@ -881,4 +862,6 @@
     </div>
     <!--end::Col-->
 </div>
+
+<?php echo view('../../modules/dashboard/Views/javascript') ?>
 <!--End::Row-->
