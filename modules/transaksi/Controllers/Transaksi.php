@@ -109,6 +109,8 @@ class Transaksi extends \CodeIgniter\Controller
 
         $data["transaksi_user_id"] = session()->get('user_id');
         $data["transaksi_datetime"] = date('Y-m-d H:i:s');
+        $data["transaksi_date"] = date('Y-m-d');
+        $data["transaksi_status"] = 1;
 
         $parent_id = Gen::key();
 
