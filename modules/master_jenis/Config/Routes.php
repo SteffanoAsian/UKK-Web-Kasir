@@ -2,8 +2,8 @@
 
 // define Users Routes
 
-$routes->group('master_menu', static function ($routes) {
-	foreach (['index','create, update, destroy' ] as $key => $value) {
-        $routes->add((($value == 'index') ? '/' : $value), "\Modules\master_menu\Controllers\Master_menu::$value");
+$routes->group('master_jenis', static function ($routes) {
+	foreach (['index','store','update','edit','destroy' ] as $key => $value) {
+        $routes->add((($value == 'index') ? '/' : $value), "\Modules\master_jenis\Controllers\Master_jenis::$value");
     }
 });

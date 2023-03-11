@@ -85,7 +85,9 @@ phpunit
 #-------------------------
 vendor/
 public/
-#-------------------------
+# modules/dashboard
+# modules/
+-------------------------
 # IDE / Development Files
 #-------------------------
 

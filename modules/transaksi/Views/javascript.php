@@ -236,6 +236,7 @@
                                     $('#showKategori').html('')
                                     $('#showTotal').val(price)
                                     loadTable()
+                                    loadMeja()
                                 }
                             });
                             HELPER.unblock(500);

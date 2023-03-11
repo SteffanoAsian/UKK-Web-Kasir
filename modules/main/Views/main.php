@@ -1891,7 +1891,6 @@
 				<div class="content d-flex flex-column flex-column-fluid bg-secondary bg-gradient" id="kt_content">
 					<!-- begin::Container
 					<div class="container" id="kt_content_container"> -->
-					bakso
 					<!-- </div> -->
 					<!--end::Container-->
 				</div>
@@ -3545,13 +3544,14 @@
 	<!-- datatable -->
 	<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.13.2/js/jquery.dataTables.js"></script>
 	<!-- amchart -->
-	<!-- <script src="https://cdn.amcharts.com/lib/4/core.js"></script> -->
+	<!-- <script src=""></script> -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.2.1/chart.min.js" integrity="sha512-v3ygConQmvH0QehvQa6gSvTE2VdBZ6wkLOlmK7Mcy2mZ0ZF9saNbbk19QeaoTHdWIEiTlWmrwAL4hS8ElnGFbA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 	<!-- <script src="https://cdn.amcharts.com/lib/4/charts.js"></script> -->
 	<!-- <script src="https://cdn.amcharts.com/lib/4/themes/animated.js"></script> -->
 	<script src="https://cdn.amcharts.com/lib/5/index.js"></script>
 	<script src="https://cdn.amcharts.com/lib/5/xy.js"></script>
 	<script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
-	<script src="//cdn.amcharts.com/lib/5/themes/Micro.js"></script>
+	<script src="https://cdn.amcharts.com/lib/5/themes/Micro.js"></script>
 	<script>
 		BASE_URL = "<?php echo base_url() ?>/";
 	</script>

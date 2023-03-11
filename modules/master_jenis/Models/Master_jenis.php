@@ -24,6 +24,7 @@ class Master_jenis extends \App\Core\BaseModel
                         'master_jenis_id',
                         'master_jenis_nama',
                         'master_jenis_code',
+                        'master_jenis_status'
                     )
                 )
             )

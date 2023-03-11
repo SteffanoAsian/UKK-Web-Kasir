@@ -19,7 +19,19 @@ class Users extends \App\Core\BaseModel
                     array('name' => 'user_status'),
                     array('name' => 'user_email'),
                 )
-            ),
+            ), 'view' => array(
+                'name' => 'v_user',
+                'mode' => array(
+                    'datatable' => array(
+                        'user_id',
+                        'user_name',
+                        'user_username',
+                        'role_nama',
+                        'user_status',
+                        'user_email',
+                    )
+                )
+            )
         );
         parent::__construct($model);
     }

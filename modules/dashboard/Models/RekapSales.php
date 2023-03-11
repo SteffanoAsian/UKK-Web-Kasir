@@ -12,7 +12,7 @@ class RekapSales extends \App\Core\BaseModel
                 'primary' => 'transaksi_date',
                 'fields' => array(
                     array('name' => 'transaksi_date', 'unique' => true),
-                    array('name' => 'Total'),
+                    array('name' => 'total'),
                     array('name' => 'jumlah'),
                 )
             ),

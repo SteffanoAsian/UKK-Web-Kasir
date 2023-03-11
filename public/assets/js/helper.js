@@ -214,6 +214,7 @@ var HELPER = function () {
                 processing: true,
                 ajax: {
                     url: config.url,
+                    data: config.data,
                     type: 'POST',
                 },
 
