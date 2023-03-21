@@ -1,4 +1,5 @@
 <script type="text/javascript">
+    var customer = ''
     $(() => {
         HELPER.fields = [
             'transaksi_id',
@@ -9,8 +10,9 @@
             edit: BASE_URL + 'list_transaksi/edit',
             store: BASE_URL + 'list_transaksi/store',
             update: BASE_URL + 'list_transaksi/update',
-            destroy: BASE_URL + 'list_transaksi/destroy',
-            loadAdminKasir : BASE_URL + 'list_transaksi/loadAdminKasir'
+            detail: BASE_URL + 'list_transaksi/loadDetail',
+            loadAdminKasir: BASE_URL + 'list_transaksi/loadAdminKasir',
+            loadMeja: BASE_URL + 'list_transaksi/loadMeja',
 
         };
 
@@ -23,15 +25,16 @@
 
         loadTable()
         loadComboAdmin()
+        loadMeja()
     })
     $('#filter_tanggal').on('apply.daterangepicker', function(ev, picker) {
         $(this).val(picker.startDate.format('YYYY/MM/DD') + ' - ' + picker.endDate.format('YYYY/MM/DD'));
     });
     $(document).ready(function() {
         $("#modal-edit").on("hidden.bs.modal", function() {
-            $("#form-menu")[0].reset();
-            $('#menu_id').val('')
-            $('#master_menu_jenis_id').val('').trigger('change');
+            $("#form-transaksi")[0].reset();
+            $('#transaksi_id').val('')
+            $('#transaksi_meja_id').val('').trigger('change');
         });
     });
 
@@ -39,7 +42,7 @@
         HELPER.initTable({
             el: "table-transaksi",
             url: HELPER.api.index,
-            data : data,
+            data: data,
             searchAble: true,
             destroyAble: true,
             responsive: true,
@@ -75,16 +78,20 @@
                     targets: 4,
                     orderable: true,
                     render: function(data, type, full, meta) {
+                        return full['master_meja_no'];
+                    },
+                },
+                {
+                    targets: 5,
+                    orderable: true,
+                    render: function(data, type, full, meta) {
                         return full['user_name'];
                     },
                 },
-
-
                 {
-                    targets: 5,
+                    targets: 6,
                     orderable: false,
                     render: function(data, type, full, meta) {
-                        var button = ''
                         var dropdown = ''
 
                         dropdown += `<div class="dropdown">
@@ -93,6 +100,7 @@
 											</a>
 											<div class="dropdown-menu dropdown menu-sm dropdown-menu-right">
 												<ul class="nav nav-hoverable flex-column">
+                                                    <li class="nav-item"><a href="javascript:void(0);" class="nav-link text-hover-primary" onclick="onDetail('` + full['transaksi_id'] + `', '${full['transaksi_pelanggan_nama']}')"><i class="nav-icon fas fa-info text-hover-primary mx-3"></i><span class="nav-text text-hover-primary">Detail</span></a></li>
                                                     <li class="nav-item"><a href="javascript:void(0);" class="nav-link text-hover-primary" onclick="onEdit('` + full['transaksi_id'] + `')"><i class="nav-icon fa fa-pen text-hover-primary mx-3"></i><span class="nav-text text-hover-primary">Edit</span></a></li>
 												</ul>
 											</div>
@@ -108,17 +116,35 @@
         $('#modal-edit').modal('show')
     }
 
+    loadMeja = () => {
+        HELPER.genCombo({
+            el: 'transaksi_meja_id',
+            valueField: 'master_meja_id',
+            displayField: 'master_meja_no',
+            displayField2: 'master_meja_location',
+            grouped: true,
+            url: HELPER.api.loadMeja,
+            placeholder: '-Pilih Lokasi Meja-',
+        })
+    }
+
     onEdit = (id) => {
         HELPER.block();
         $.ajax({
             url: HELPER.api.edit,
             method: 'POST',
             data: {
-                master_menu_id: id
+                transaksi_id: id
             },
             success: function(response) {
                 var response = $.parseJSON(response)
-                HELPER.populateForm($('#form-menu'), response);
+                HELPER.populateForm($('#form-transaksi'), response);
+                var price = new Intl.NumberFormat('en-ID', {
+                    style: 'currency',
+                    currency: 'IDR'
+                }).format(response.transaksi_total);
+                // return price;
+                $('#transaksi_total').val(price)
             },
             complete: function(response) {
                 setTimeout(function() {
@@ -135,8 +161,65 @@
         });
     }
 
-    onClose = () => {
-        $('#modal-edit').modal('hide')
+    onDetail = (id, nama) => {
+        HELPER.block()
+        HELPER.initTable({
+            el: "table-detail",
+            url: HELPER.api.detail,
+            data: {
+                transaksi_id: id
+            },
+            searchAble: false,
+            destroyAble: true,
+            responsive: true,
+            autoWidth: true,
+            index: 1,
+            sorting: 'asc',
+            columnDefs: [{
+                    targets: 1,
+                    orderable: true,
+                    render: function(data, type, full, meta) {
+                        return full['master_menu_nama'];
+                    },
+                },
+                {
+                    targets: 2,
+                    orderable: true,
+                    render: function(data, type, full, meta) {
+                        return full['transaksi_detail_jml_beli'];
+                    },
+                },
+                {
+                    targets: 3,
+                    orderable: true,
+                    render: function(data, type, full, meta) {
+                        var price = new Intl.NumberFormat('en-ID', {
+                            style: 'currency',
+                            currency: 'IDR'
+                        }).format(full['master_menu_harga']);
+                        return price;
+                    },
+                },
+                {
+                    targets: 4,
+                    orderable: true,
+                    render: function(data, type, full, meta) {
+                        var price = new Intl.NumberFormat('en-ID', {
+                            style: 'currency',
+                            currency: 'IDR'
+                        }).format(full['transaksi_detail_total']);
+                        return price;
+                    },
+                },
+            ],
+        });
+        $('#headDetail').text('Detail Transaksi Customer ' + nama)
+        $('#modal-detail').modal('show')
+        HELPER.unblock(500)
+    }
+
+    onClose = (name = null) => {
+        $('#modal-' + name).modal('hide')
     }
 
     loadComboAdmin = () => {
@@ -193,6 +276,7 @@
                         message: 'Successfully saved data',
                         callback: function() {
                             loadTable()
+                            loadMeja()
                             $('#modal-edit').modal('hide')
                         }
                     });

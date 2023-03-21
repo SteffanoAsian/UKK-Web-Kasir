@@ -40,7 +40,7 @@ body {
   font-weight: 400;
   line-height: 1.5;
   color: #181C32;
-  background-color: #ffffff;
+  background-color: rgba(5, 5, 5, 0.9);
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
@@ -11365,6 +11365,10 @@ fieldset:disabled .btn {
   background-color: #E4E6EF !important;
 }
 
+.bg-secondary-custom {
+  background-color: #808588 !important;
+}
+
 .bg-success {
   background-color: #50CD89 !important;
 }
@@ -11383,6 +11387,10 @@ fieldset:disabled .btn {
 
 .bg-dark {
   background-color: #181C32 !important;
+}
+
+.bg-dark-custom {
+  background-color: rgba(5, 5, 5, 0.9) !important;
 }
 
 .bg-body {
@@ -54220,7 +54228,7 @@ canvas {
 }
 
 body {
-  background-color: #FCFCFD;
+  background-color: #808588;
 }
 
 @media (min-width: 992px) {

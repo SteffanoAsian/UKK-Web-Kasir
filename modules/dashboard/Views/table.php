@@ -9,7 +9,7 @@
                 <!--begin::Card title-->
                 <h3 class="card-title align-items-start flex-column">
                     <span class="card-label fw-boldest fs-3 text-dark" id="displayHai">Hai,</span>
-                    <span class="text-info mt-2 fw-bold fs-6">Berikut rekap Penjualan Wiku Coffee</span>
+                    <span class="text-info mt-2 fw-bold fs-6">Berikut rekap Penjualan Do'a Ibu Coffee</span>
                 </h3>
                 <!--end::Card title-->
                 <!--begin::Card toolbar-->
@@ -25,15 +25,18 @@
                     <!--begin::Tap pane-->
                     <div class="tab-pane fade active show" id="kt_chart_widget_1_tab_pane_1">
                         <!--begin::Row-->
-                        
+
                         <!--end::Row-->
                         <form action="javascript:filterChartRekap()" method="post" id="form-filterRekap" name="form-filterRekap" autocomplete="off" enctype="multipart/form-data">
                             <div class="card-body mx-20">
-                                <div class="col-md-5">
-                                    <input type="text" class="form-control form-control-sm" id="filterRekap" />
-                                </div>
-                                <div class="col-md-5">
-                                    <button type="submit" class="btn btn-sm btn-primary" id="btn-save" style="width: 100%;"><i class="fa fa-filter"></i>Filter</button>
+                                <div class="col-md-12 row">
+                                    <div class="col-md-3">
+                                        <label for="filterRekap">Filter Tanggal Transaksi</label>
+                                        <input type="text" class="form-control form-control-sm" id="filterRekap" />
+                                    </div>
+                                    <div class="col-md-2 mt-6">
+                                        <button type="submit" class="btn btn-sm btn-primary" id="btn-save" style="width: 100%;"><i class="fa fa-filter"></i>Filter</button>
+                                    </div>
                                 </div>
                             </div>
                         </form>

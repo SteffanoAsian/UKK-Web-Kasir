@@ -91,7 +91,6 @@
 											<div class="dropdown-menu dropdown menu-sm dropdown-menu-right">
 												<ul class="nav nav-hoverable flex-column">
                                                     <li class="nav-item"><a href="javascript:void(0);" class="nav-link text-hover-primary" onclick="onEdit('` + full['user_id'] + `')"><i class="nav-icon fa fa-pen text-hover-primary mx-3"></i><span class="nav-text text-hover-primary">Edit</span></a></li>
-                                                    <li class="nav-item"><a href="javascript:void(0);" class="nav-link text-hover-primary" onclick="onStatus('` + full['user_id'] + `',${act})"><i class="nav-icon fa fa-eye text-hover-primary mx-3"></i><span class="nav-text text-hover-primary">${status}</span></a></li>
                                                     <li class="nav-item"><a href="javascript:void(0);" class="nav-link text-hover-danger" onclick="onDelete('` + full['user_id'] + `')"><i class="nav-icon fa fa-trash text-hover-danger mx-3"></i><span class="nav-text text-hover-danger">Delete</span></a></li>
 												</ul>
 											</div>
