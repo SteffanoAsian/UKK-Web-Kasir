@@ -27,6 +27,7 @@ class List_transaksi extends \App\Core\BaseModel
                         'transaksi_datetime',
                         'transaksi_date',
                         'transaksi_user_id',
+                        'transaksi_meja_id',
                         'transaksi_pelanggan_nama',
                         'transaksi_status',
                         'transaksi_total',

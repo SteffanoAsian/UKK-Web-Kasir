@@ -10,8 +10,8 @@
                 </div>
                 <div class="card-toolbar">
                     <div class="col-md-12">
-                        <button class="btn btn-success btn-sm mx-2" data-role="master_basecamp-Create" data-roleable="true" onclick="onAdd()"><i class="fa fa-plus"></i>Add</button>
-                        <button onclick="refresh()" type="button" id="btn-filter" class="mx-2 btn btn-outline-success btn-sm"><i class="flaticon-refresh"></i>Refresh</button>
+                        <button class="btn btn-primary btn-sm mx-2" onclick="onAdd()"><i class="fa fa-plus"></i>Add</button>
+                        <button onclick="onRefresh()" type="button" id="btn-filter" class="mx-2 btn btn-outline-primary btn-sm"><i class="flaticon-refresh"></i>Refresh</button>
                     </div>
                 </div>
             </div>
@@ -54,9 +54,6 @@
                                     <input id="master_jenis_code" type="text" class="form-control form-control-sm" name="master_jenis_code" required>
                                 </div>
                             </div>
-                            <!-- <div class="modal-body"> -->
-                            <!-- <div class="row"> -->
-                            <!-- <div class="col-md-12 mt-5"> -->
                             <div class="form-group row">
                                 <label class="col-lg-3 col-form-label" for="master_jenis_nama"> Nama </label>
                                 <div class="col-lg-8">
@@ -64,28 +61,11 @@
                                     <input id="master_jenis_nama" type="text" class="form-control form-control-sm" name="master_jenis_nama" required>
                                 </div>
                             </div>
-                            <!-- <div class="form-group row fv-plugins-icon-container has-danger">
-                                <label class="col-3 col-form-label" for="master_jenis_status">Status</label>
-                                <div class="col-lg-8">
-                                    <div class="col-form-label">
-                                        <div class="radio-inline">
-                                            <label class="radio">
-                                                <input type="radio" name="master_jenis_status" id="master_jenis_status" value="1" required />
-                                                <span></span>Aktif
-                                            </label>
-                                            <label class="radio">
-                                                <input type="radio" name="master_jenis_status" id="master_jenis_status" value="0" required />
-                                                <span></span>Tidak Aktif
-                                        </div>
-                                    </div>
-                                </div>
-                            </div> -->
                         </div>
-
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="submit" class="btn btn-success" id="btn-save" style="width: 100%;"><i class="fa fa-save"></i>Save</button>
+                    <button type="submit" class="btn btn-primary" id="btn-save" style="width: 100%;"><i class="fa fa-save"></i>Save</button>
                 </div>
             </div>
         </div>

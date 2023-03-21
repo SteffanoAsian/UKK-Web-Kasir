@@ -10,8 +10,8 @@
                 </div>
                 <div class="card-toolbar">
                     <div class="col-md-12">
-                        <button class="btn btn-success btn-sm mx-2" data-role="master_basecamp-Create" data-roleable="true" onclick="onAdd()"><i class="fa fa-plus"></i>Add</button>
-                        <button onclick="refresh()" type="button" id="btn-filter" class="mx-2 btn btn-outline-success btn-sm"><i class="flaticon-refresh"></i>Refresh</button>
+                        <button class="btn btn-primary btn-sm mx-2" onclick="onAdd()"><i class="fa fa-plus"></i>Add</button>
+                        <button onclick="onRefresh()" type="button" id="btn-filter" class="mx-2 btn btn-outline-primary btn-sm"><i class="flaticon-refresh"></i>Refresh</button>
                     </div>
                 </div>
             </div>
@@ -23,7 +23,7 @@
                             <tr>
                                 <th width="20px" class="text-center">No</th>
                                 <th>No. Meja</th>
-                                <th>Nama</th>
+                                <th>Lokasi</th>
                                 <th>Status</th>
                                 <th>Actions</th>
                             </tr>
@@ -91,7 +91,7 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="submit" class="btn btn-success" id="btn-save" style="width: 100%;"><i class="fa fa-save"></i>Save</button>
+                    <button type="submit" class="btn btn-primary" id="btn-save" style="width: 100%;"><i class="fa fa-save"></i>Save</button>
                 </div>
             </div>
         </div>

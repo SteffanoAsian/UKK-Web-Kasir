@@ -66,6 +66,8 @@ class Main extends \CodeIgniter\Controller
 
         $data['menu'] = $html;
         $data['rules'] = session()->get('rules');
+        $data['name'] = session()->get('user_name');
+        $data['email'] = session()->get('user_email');
         echo view('../../modules/main/Views/main.php', $data);
     }
 

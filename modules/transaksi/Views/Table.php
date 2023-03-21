@@ -9,12 +9,6 @@
                     </span>
                     <span class="fs-1">Sales</span>
                 </div>
-                <!-- <div class="card-toolbar">
-                    <div class="col-md-12">
-                        <button class="btn btn-primary btn-sm mx-2" data-role="master_basecamp-Create" data-roleable="true" onclick="onAdd()"><i class="fa fa-plus"></i>Add</button>
-                        <button onclick="onRefresh()" type="button" id="btn-filter" class="mx-2 btn btn-outline-primary btn-sm"><i class="fa fa-retweet"></i>Refresh</button>
-                    </div>
-                </div> -->
             </div>
             <div class="card-body">
                 <div class="row mb-3">
@@ -49,7 +43,7 @@
                                     <div class="form-group row d-flex justify-content-center">
                                         <!-- <label for="showKembali">Uang Kembalian</label> -->
                                         <div class="col-lg-10">
-                                            <button class="btn btn-success btn-sm my-5 btn-block" type="submit">Tambah</button>
+                                            <button class="btn btn-primary btn-sm my-5 btn-block" type="submit">Tambah</button>
                                         </div>
                                     </div>
                                 </div>
@@ -100,7 +94,7 @@
                                     </div>
                                     <div class="form-group row d-flex justify-content-center">
                                         <div class="col-lg-10 ">
-                                            <button class="btn btn-success btn-sm btn-block my-5 " type="submit">Proses</button>
+                                            <button class="btn btn-primary btn-sm btn-block my-5 " type="submit">Proses</button>
                                         </div>
                                     </div>
                                 </div>
